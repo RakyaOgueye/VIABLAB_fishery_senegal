@@ -68,3 +68,4 @@ Default/
 /Makefile
 source/CMakeCache.txt
 source/cmake_install.cmake
+source/Makefile
