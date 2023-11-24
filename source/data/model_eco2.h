@@ -37,13 +37,13 @@
  */
 // toutes les valeurs ont été divisées par 100 pour faciliter le calcul
 double r=0.15;
-double k=100000;  // tonnes
+double k=10000000;  // tonnes
 //double alpha = 0.1144 ; //
 double a = 0.8;
 double p = 542025 ;   //fcfa
-double c1 = 0.3 ;  //tonnes/an
-double c2 = 0.5 ; //tonnes/an
+double c1 = 19 ;  //tonnes/an
 double g = 0.002 ;
+double Emax = 33000;
 
 
 //double u1max = 0.3;
@@ -57,8 +57,8 @@ double g = 0.002 ;
 
 void dynamics(double * x, double *u, double * image)
 {
-  image[0]=  r*x[0]*(1-x[0]/k)-min(a*c1*u[0]+a*c2*u[1],1.0)*x[0];
-  image[1]=  u[2]*(a*c1*u[0]+a*c2*u[1])*x[0] - p*(u[0] + u[1]) -g*x[1];
+  image[0]=  r*x[0]*(1-x[0]/k)-((a*c1*u[0])/Emax)*x[0];
+  image[1]=  u[1]*((a*c1*u[0])/Emax)*x[0] - p*(u[0]) -g*x[1];
   
   //cout<< " dynamique renvoie "<<image[0]<< " "<<image[1]<<endl;
 }
@@ -66,17 +66,17 @@ void dynamics(double * x, double *u, double * image)
 inline void jacobian(double *x, double *u , double ** jacob)
 {
 
-	jacob[0][0]=r*(1-x[0]/k)-r*x[0]/k-min(a*c1*u[0]+a*c2*u[1],1.0);
+	jacob[0][0]=r*(1-x[0]/k)-r*x[0]/k-((a*c1*u[0])/Emax);
 	jacob[0][1]=0;
 
-	jacob[1][0]=u[2]*(a*c1*u[0]+a*c2*u[1]);
+	jacob[1][0]=u[1]*((a*c1*u[0])/Emax);
 	jacob[1][1]=-g;
 
 }
 inline void localDynBounds(double * x, double * res)
 {
-  res[0]=abs(r*x[0]*(1-x[0]/k)-min(a*c1+a*c2,1.0)*x[0]);
-  res[1]=abs((a*c1+a*c2)*x[0] - p - g*x[1]);
+  res[0]=abs(r*x[0]*(1-x[0]/k)-((a*c1)/Emax)*x[0]);
+  res[1]=abs(((a*c1)/Emax)*x[0] - p - g*x[1]);
 
 }
 

@@ -39,7 +39,7 @@
 //string paramsFile = "JuliaSets_params.json";
 //string paramsFile = "zermelo_tmin_params.json";
 //string paramsFile = "zermelo_Lmin_params.json";
-string paramsFile = "model.json";
+string paramsFile = "model_economique.json";
 //string paramsFile = "allParams.json";
 //string paramsFile = "resilience.json";
 
@@ -52,7 +52,7 @@ string paramsFile = "model.json";
 //#include  "../data/zermelo_Lmin.h"   //-- Zermelo crit�re int�gral
 //#include  "../data/Julia2D_data.h" // Zermelo temps minimum
 //#include "../data/ExempleViabi2D_data.h"
-#include "../data/model.h"
+#include "../data/model_economique.h"
 //#include  "../data/testPendule_data.h"   //-- Bassin de capture, pendule
 //#include  "../data/resilience_data.h"   //-- Noyeu de viabilit� resilience
 //#include "../data/equilibres4D_data.h"           // economie
