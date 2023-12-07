@@ -37,12 +37,12 @@
  * Some model specific parameters can be defined here
  */
 double r=0.15;
-double a=0.8;
-double k=100000; //tonne
-double Emax=20000;//17337.5; // tonne/pirogue/an (2500pirogues x 0.019t x 365)
+double a=0.7;
+double k=10000; //tonne
+double Emax=17337.5; // tonne/pirogue/an (2500pirogues x 0.019t x 365)
 double c=6.935; // capture en tonne/an (0.019t x 365)
-double p=542025; // coût en cfa de sortie en un an
-double g=0.002;
+double p=826.1; //542025; // coût en cfa de sortie en un an
+double g=0.02;
 
 
 void dynamics(double * x, double *u, double * image)
