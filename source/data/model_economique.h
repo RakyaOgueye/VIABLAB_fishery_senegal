@@ -42,7 +42,7 @@ double k=1000000; //kg
 double Emax=400000;//352400; // kg/pirogue/an (2988pirogues x 118kg x a=1)
 double c=118; //6.935; // capture en kg/an/pirogue
 double lambda=987000; //826.1; // coût en cfa de sortie par pirogue par an
-double gamma=0.33; // proportion du capital perdue dû à l'inflation
+double gamma=0.14; // proportion du capital perdue dû à l'inflation
 
 
 void dynamics(double * x, double *u, double * image)
