@@ -37,12 +37,12 @@
  * Some model specific parameters can be defined here
  */
 double r=0.015;
-double a=0.7;
+double a=0.8;
 double k=1000000; //kg
 double Emax=400000;//352400; // kg/pirogue/an (2988pirogues x 118kg x a=1)
 double c=118; //6.935; // capture en kg/an/pirogue
 double p=987000; //826.1; // coût en cfa de sortie par pirogue par an
-double g=0.73; // 
+double g=0.02; // proportion du capital perdue dû à l'inflation
 
 
 void dynamics(double * x, double *u, double * image)
