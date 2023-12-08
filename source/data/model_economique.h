@@ -36,13 +36,13 @@
 /*
  * Some model specific parameters can be defined here
  */
-double r=0.15;
+double r=0.015;
 double a=0.7;
-double k=10000; //tonne
-double Emax=17337.5; // tonne/pirogue/an (2500pirogues x 0.019t x 365)
-double c=6.935; // capture en tonne/an (0.019t x 365)
-double p=826.1; //542025; // coût en cfa de sortie en un an
-double g=0.02;
+double k=1000000; //kg
+double Emax=400000;//352400; // kg/pirogue/an (2988pirogues x 118kg x a=1)
+double c=118; //6.935; // capture en kg/an/pirogue
+double p=987000; //826.1; // coût en cfa de sortie par pirogue par an
+double g=0.73; // 
 
 
 void dynamics(double * x, double *u, double * image)
