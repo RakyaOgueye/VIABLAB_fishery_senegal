@@ -38,14 +38,14 @@
  */
 double r=0.015;
 double a=0.8; // accessibilité
-double k=1000000; //kg
-double Emax=400000; // kg/pirogue/an 
-double c=118; //6.935; // capture en kg/an/pirogue
-double lambda=987000; //826.1; // coût en cfa de sortie par pirogue par an
-double g=0.14; // proportion du capital perdue dû à l'inflation
+double k=100000; //tonne
+double Emax=4000; // tonne/pirogue/an 
+double c=6.935; // capture en tonne/an/pirogue
+double lambda=987000; // coût en cfa de sortie par pirogue par an
+double g=0.3; // proportion du capital perdue dû à l'inflation
 
 // u[0] et u[1] sont respectivement le contrôle nombre de sorties de pirogues
-// et prix du poisson au kilogramme
+// et prix du poisson en tonne
 
 void dynamics(double * x, double *u, double * image)
 {
