@@ -36,7 +36,7 @@
 /*
  * Some model specific parameters can be defined here
  */
-double r=0.015;
+double r=0.15;
 double a=0.8; // accessibilité
 double k=100000; //tonne
 double Emax=30000; // tonne/pirogue/an 
