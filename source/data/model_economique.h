@@ -36,13 +36,13 @@
 /*
  * Some model specific parameters can be defined here
  */
-double r=0.15;
+double r=0.8;
 double a=0.8; // accessibilité
 double k=100000; //tonne
-double Emax=30000; // tonne/pirogue/an 
+double Emax=29200; // tonne/pirogue/an 
 double c=6.935; // capture en tonne/an/pirogue
 double lambda=987000; // coût en cfa de sortie par pirogue par an
-double g=0.1; // proportion du capital perdue dû à l'inflation
+//double g=0.34; // proportion du capital perdue dû à l'inflation
 
 // u[0] et u[1] sont respectivement le contrôle nombre de sorties de pirogues
 // et prix du poisson en tonne
@@ -50,7 +50,7 @@ double g=0.1; // proportion du capital perdue dû à l'inflation
 void dynamics(double * x, double *u, double * image)
 {
   image[0]=r*x[0]*(1-x[0]/k)-((a*c*u[0])/Emax)*x[0];
-  image[1]=u[1]*((a*c*u[0])/Emax)*x[0] - lambda*u[0] - g*x[1];
+  image[1]=u[1]*((a*c*u[0])/Emax)*x[0] - lambda*u[0]; // - g*x[1];
 
   //cout<< " dynamique renvoie "<<image[0]<< " "<<image[1]<<endl;
 }
@@ -61,12 +61,12 @@ inline void jacobian(double *x, double *u , double ** jacob)
 	jacob[0][1]=0;
 
 	jacob[1][0]=u[1]*((a*c*u[0])/Emax);
-	jacob[1][1]=-g;
+	jacob[1][1]=0;
 }
 inline void localDynBounds(double * x, double * res)
 {
   res[0]=abs(r*x[0]*(1-x[0]/k)-((a*c)/Emax)*x[0]);
-  res[1]=abs(((a*c)/Emax)*x[0] - lambda - g*x[1]);
+  res[1]=abs(((a*c)/Emax)*x[0] - lambda);
 }
 
 #endif /* VIAB2D_H_ */
