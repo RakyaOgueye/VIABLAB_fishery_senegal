@@ -32,18 +32,18 @@ Une fois le `make` executé la compilation doit avoir produit un executable qu'o
 ```
 ./viabLabExe 
 ```
-VIABLAB s'execute alors sur un modèle près enregistré. Les résultats du modèle sont à retrouver dans le repertoire `OUTPUT`
+VIABLAB s'execute alors sur un modèle pré enregistré. Les résultats du modèle sont à retrouver dans le repertoire `OUTPUT`
 
 ## faire tourner un premier modele :
 
-Comme vous avez déjà fait tourner viablab, il faudra refaire la compilation en netoyant le cache avec `make clean`
+Comme vous avez déjà fait tourner viablab, il faudra refaire la compilation en nettoyant le cache avec `make clean`
 
 1. Ensuite vous pourrez déplacer le fichier `ModelDataInclusion.h` et `model_peche.h` dans `VIABLAB/source/data`
 2. Deplacer le fichier `peche.json` dans `VIABLAB/INPUT`
 3. lancer la compilation avec `make`
 4. executer votre modèle `./viabLabExe`
 
-les resultats sont alors générer dans `OUTPUT` avec le préfix `peche`
+les resultats sont alors générés dans `OUTPUT` avec le préfix `peche`
 
 ## Le fonctionnement générique
 
