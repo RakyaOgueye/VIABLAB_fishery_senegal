@@ -36,21 +36,19 @@
 /*
  * Some model specific parameters can be defined here
  */
-double r=0.8;
+double r=0.8; // taux de croissance annuel
 double a=0.8; // accessibilité
-double k=100000; //tonne
-//double Emax=29200; // tonne/pirogue/an 
-//double c=6.935; // capture en tonne/an/pirogue
+double k=100000; //capacité de charge
 double lambda=987000; // coût en cfa de sortie par pirogue par an
-double g=0.1; // proportion du capital perdue dû à l'inflation
-double q=0.0001;
+double g=0.1; // proportion du capital perdue dû à l'usure
+double q=0.001; // capturabilité
 // u[0] et u[1] sont respectivement le contrôle nombre de sorties de pirogues
-// et prix du poisson en tonne
+// et prix du poisson 
 
 void dynamics(double * x, double *u, double * image)
 {
-  image[0]=r*x[0]*(1-x[0]/k)-(a*q*u[0])*x[0];
-  image[1]=u[1]*(a*q*u[0])*x[0] - lambda*u[0]; - g*x[1];
+  image[0]=r*x[0]*(1-x[0]/k)-(a*q*u[0])*x[0]; // variation de la biomasse
+  image[1]=u[1]*(a*q*u[0])*x[0] - lambda*u[0]; - g*x[1];  // capital de la pêche
 
   //cout<< " dynamique renvoie "<<image[0]<< " "<<image[1]<<endl;
 }
