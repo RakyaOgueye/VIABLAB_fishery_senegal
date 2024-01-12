@@ -27,6 +27,7 @@
  */
 
 
+#include <string>
 #ifndef MODELDATA_H_
 #define MODELDATA_H_
 
