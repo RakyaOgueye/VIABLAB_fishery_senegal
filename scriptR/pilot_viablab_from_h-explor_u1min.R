@@ -30,7 +30,7 @@ for(control_min in seq(from = 0, to = 100, by = 1)){
       paste0("double k=", Rk, ";"),
       paste0("double lambda=", Rlambda, ";"),
       paste0("double g=", Rg, ";"),
-      paste0("double k=", Rq, ";")
+      paste0("double q=", Rq, ";")
     )
     contenu_h[39:45] <- nouvelles_lignes_h
     writeLines(contenu_h, fichier_h)
