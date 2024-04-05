@@ -36,33 +36,26 @@
 /*
  * Some model specific parameters can be defined here
  */
-double r=0.9;
-double a=0.8;
-double k=10560;
-double lambda=987000;
-double g=0.1;
-double q=1e-04;
+double r=0.9; // taux de croissance annuel
+double k=10560; //capacité de charge
+double q=0.0001; // capturabilité
+//double a=0.8;
 
 void dynamics(double * x, double *u, double * image)
 {
-  image[0]=r*x[0]*(1-x[0]/k)-(a*q*u[0])*x[0]; // variation de la biomasse
-  image[1]=u[1]*(a*q*u[0])*x[0] - lambda*u[0]; - g*x[1];  // capital de la pêche
+  image[0]=r*x[0]*(1-x[0]/k)-(q*u[0])*x[0]; // variation de la biomasse
 
   //cout<< " dynamique renvoie "<<image[0]<< " "<<image[1]<<endl;
 }
 
 inline void jacobian(double *x, double *u , double ** jacob)
 {
-	jacob[0][0]=r*(1-x[0]/k)-r*x[0]/k-(a*q*u[0]);
-	jacob[0][1]=0;
+	jacob[0][0]=r*(1-x[0]/k)-r*x[0]/k-(q*u[0]);
 
-	jacob[1][0]=u[1]*(a*q*u[0]);
-	jacob[1][1]= - g;
 }
 inline void localDynBounds(double * x, double * res)
 {
-  res[0]=abs(r*x[0]*(1-x[0]/k)-(a*q)*x[0]);
-  res[1]=abs((a*q)*x[0] - lambda  - g*x[1]);
+  res[0]=abs(r*x[0]*(1-x[0]/k)-q*x[0]);
 }
 
 #endif /* VIAB2D_H_ */
