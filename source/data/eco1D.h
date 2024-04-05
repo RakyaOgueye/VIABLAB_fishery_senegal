@@ -39,7 +39,6 @@
 double r=0.9; // taux de croissance annuel
 double k=10560; //capacité de charge
 double q=0.0001; // capturabilité
-//double a=0.8;
 
 void dynamics(double * x, double *u, double * image)
 {
