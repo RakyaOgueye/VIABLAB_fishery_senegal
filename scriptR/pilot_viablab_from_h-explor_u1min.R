@@ -9,10 +9,10 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 # Valeur fixe pour Rr
 Rr <- 0.9
 Ra <- 0.8      #// accessibilité
-Rk <- 100000   #// tonne
+Rk <- 10560   #// tonne
 Rlambda <- 987000 #// coût en cfa de sortie par pirogue par an
 Rg <- 0.1      #// proportion du capital perdue dû à l'inflation
-Rq <- 0.001    #//capturabilité
+Rq <- 0.0001    #//capturabilité
 
 # Boucle sur control_min_val_json
 for(control_min in seq(from = 0, to = 100, by = 1)){
@@ -30,9 +30,9 @@ for(control_min in seq(from = 0, to = 100, by = 1)){
       paste0("double k=", Rk, ";"),
       paste0("double lambda=", Rlambda, ";"),
       paste0("double g=", Rg, ";"),
-      paste0("double k=", Rq, ";")
+      paste0("double q=", Rq, ";")
     )
-    contenu_h[39:45] <- nouvelles_lignes_h
+    contenu_h[39:44] <- nouvelles_lignes_h
     writeLines(contenu_h, fichier_h)
   } else {
     print("Le fichier model_economique.h n'a pas assez de lignes pour être modifié.")
