@@ -6,7 +6,7 @@
         "CONTROL_GRID_POINTS": [21,21]
     },
     "GRID_PARAMETERS": {
-        "OUTPUT_FILE_PREFIX": "model_FL2D",
+        "OUTPUT_FILE_PREFIX": "model_FL",
         "STATE_DIMENSION": 2,
         "GRID_METHOD": 1,
         "GRID_MAIN_DIR": 1,
