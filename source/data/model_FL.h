@@ -43,8 +43,8 @@ double lambda=98700; // 987000;
 double g=0.1;
 double q=0.0001;
 // bornes contraintes
-double B_min=1000; // borne min ensemble contrainte sur B
-double C_min=34252025;//342520250; // borne min ensemble contrainte sur C
+double B_min=1000; // borne min ensemble des contraintes sur B
+double C_min=34252025;//342520250; // borne min ensemble des contraintes sur C
 
 void dynamics(double * x, double *u, double * image)
 {
