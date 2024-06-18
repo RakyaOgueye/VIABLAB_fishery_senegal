@@ -49,7 +49,7 @@ double C_min=34252025;//342520250; // borne min ensemble contrainte sur C
 void dynamics(double * x, double *u, double * image)
 {
   image[0]=r*x[0]*(1-x[0]/k)-(a*q*u[0])*x[0]; // variation de la biomasse
-  image[1]=u[1]*(a*q*u[0])*x[0] - lambda*u[0]; - g*x[1];  // capital de la pêche
+  image[1]=u[1]*(a*q*u[0])*x[0] - lambda*u[0] - g*x[1];  // capital de la pêche
 
   //cout<< " dynamique renvoie "<<image[0]<< " "<<image[1]<<endl;
 }
