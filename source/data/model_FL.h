@@ -20,7 +20,8 @@
  *    - diff�rentes options d�finissant plus pr�cis�ment la nature du probl�me � r�soudre
  *    - diff�rentes options d�finissance la m�thode num�rique � utiliser
  *
- *    Voir plus loins dans les commentaires  du fichier la d�finition de chaque fonction et de chaque param�tre
+ *    Voir plus loins dans les commentaires  du fichier la d�finition de chaque fonction
+ *     et de chaque param�tre
  *
  *
  *
@@ -39,12 +40,12 @@
 double r=0.9;
 double a=0.8;
 double k=10560;
-double lambda=98700; // 987000;
+double lambda=987000; 
 double g=0.1;
 double q=0.0001;
 // bornes contraintes
 double B_min=1000; // borne min ensemble des contraintes sur B
-double C_min=34252025;//342520250; // borne min ensemble des contraintes sur C
+double C_min=7896000000; //500000000;  // borne min ensemble des contraintes sur C
 
 void dynamics(double * x, double *u, double * image)
 {
