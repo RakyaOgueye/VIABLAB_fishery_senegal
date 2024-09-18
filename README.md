@@ -43,7 +43,7 @@ Comme vous avez déjà fait tourner viablab, il faudra refaire la compilation en
 3. lancer la compilation avec `make`
 4. executer votre modèle `./viabLabExe`
 
-les resultats sont alors générés dans `OUTPUT` avec le préfix `peche`
+les resultats sont alors générés dans `OUTPUT` avec le préfix choisi, exemple : `peche`
 
 ## Le fonctionnement générique
 
